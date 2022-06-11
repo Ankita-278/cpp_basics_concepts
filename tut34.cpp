@@ -1,65 +1,43 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
+class Number
+{
+    int a;
 
-class BankDeposit{
-    int principal;
-    int years;
-    float interestRate;
-    float returnValue;
-
-    public:
-        BankDeposit(){}
-        BankDeposit(int p, int y, float r); // r can be a value like 0.04
-        BankDeposit(int p, int y, int r); // r can be a value like 14
-        void show();
+public:
+    Number()
+    {
+        a = 0;
+    }
+    Number(int num)
+    {
+        a = num;
+    }
+    Number(Number &obj)
+    {
+        cout << "copy constructor called!!" << endl;
+        a = obj.a;
+    }
+    void display()
+    {
+        cout << "The number for this object is " << a << endl;
+    }
 };
-
-BankDeposit :: BankDeposit(int p, int y, float r)
+int main()
 {
-    principal = p;
-    years = y;
-    interestRate = r;
-    returnValue = principal;
-    for (int i = 0; i < y; i++)
-    {
-        returnValue = returnValue * (1+interestRate);
-    }
-}
+    Number x, y, z(45), z2;
+    x.display();
+    y.display();
+    z.display();
 
-BankDeposit :: BankDeposit(int p, int y, int r)
-{
-    principal = p;
-    years = y;
-    interestRate = float(r)/100;
-    returnValue = principal;
-    for (int i = 0; i < y; i++)
-    {
-        returnValue = returnValue * (1+interestRate);
-    }
-}
+    Number z1(z);
+    z1.display();
 
-void BankDeposit :: show(){
-    cout<<endl<<"Principal amount was "<<principal
-        << ". Return value after "<<years
-        << " years is "<<returnValue<<endl;
-}
+    z2 = z;
+    z2.display();
 
-int main(){
-    BankDeposit bd1, bd2, bd3;
-    int p, y;
-    float r;
-    int R;
-    
-    
-    cout<<"Enter the value of p y and r"<<endl;
-    cin>>p>>y>>r;
-    bd1 = BankDeposit(p, y, r);
-    bd1.show();
-
-    cout<<"Enter the value of p y and R"<<endl;
-    cin>>p>>y>>R;
-    bd2 = BankDeposit(p, y, R);
-    bd2.show();
+    Number z3 = z;
+    z3.display();
     return 0;
 }

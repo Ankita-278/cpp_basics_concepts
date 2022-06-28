@@ -50,7 +50,20 @@ int main(){
   vlen=4.56;
   rating=4.89;
   CWHVideo djvideo(title,rating,vlen);
-  djvideo.display();
+  //djvideo.display();
 
+  //For CWH text
+  title="Django tutorial text";
+  words=433;
+  rating=4.89;
+  CWHText djText(title,rating,words);
+  //djText.display();
+
+  CWH*tuts[2];
+  tuts[0]=&djvideo;
+  tuts[1]=&djText;
+
+  tuts[0]->display();
+  tuts[1]->display();
     return 0;
 }

@@ -49,7 +49,7 @@ int main(){
   title="Django tutorial";
   vlen=4.56;
   rating=4.89;
-  CWH video djvideo(title,rating,vlen);
+  CWHVideo djvideo(title,rating,vlen);
   djvideo.display();
 
     return 0;

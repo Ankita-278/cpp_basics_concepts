@@ -1,1 +1,0 @@
-this is a pratice for I/O files in c++

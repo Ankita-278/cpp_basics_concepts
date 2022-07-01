@@ -1,5 +1,6 @@
 #include<iostream>
 #include<fstream>
+#include<string.h>
 using namespace std;
 
 
@@ -21,6 +22,7 @@ int main(){
     //creating a content string variable and filling it with string present there in the text file
     string content;
     hin>>content;
+    getline(hin,content);
     cout<<"the content of the file is "<<content;
     //disconnecting our file
     hin.close(); 

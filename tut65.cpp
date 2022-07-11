@@ -21,7 +21,10 @@ int main(){
         cin>>element;
         vec1.push_back(element);
     }
-    vec1.pop_back();
+    //vec1.pop_back();
+    display(vec1);
+    vector<int>::iterator iter=vec1.begin();
+    vec1.insert(iter+1,5,566);
     display(vec1);
     
     return 0;
